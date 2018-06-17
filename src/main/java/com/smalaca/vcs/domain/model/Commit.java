@@ -1,4 +1,4 @@
-package com.smalaca.domain.model;
+package com.smalaca.vcs.domain.model;
 
 public class Commit {
     private final String message;
