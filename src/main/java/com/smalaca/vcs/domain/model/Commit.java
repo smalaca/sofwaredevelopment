@@ -10,4 +10,8 @@ public class Commit {
     String message() {
         return message;
     }
+
+    public boolean requiresActivity() {
+        return false;
+    }
 }
