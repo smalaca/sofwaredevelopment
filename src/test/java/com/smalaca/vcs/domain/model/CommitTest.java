@@ -1,4 +1,4 @@
-package com.smalaca.domain.model;
+package com.smalaca.vcs.domain.model;
 
 import org.junit.Test;
 
