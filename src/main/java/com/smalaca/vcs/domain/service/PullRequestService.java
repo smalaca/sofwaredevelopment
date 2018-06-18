@@ -8,6 +8,8 @@ import com.smalaca.vcs.domain.model.CodeDelta;
 import com.smalaca.vcs.domain.model.History;
 import com.smalaca.vcs.domain.repository.AuthorRepository;
 
+import java.util.Map;
+
 public class PullRequestService {
     private final History history;
     private final AuthorRepository authorRepository;
@@ -24,5 +26,12 @@ public class PullRequestService {
         ChangeDate changeDate = new ChangeDate(clock.nowDate());
 
         history.store(message, codeDelta, author, changeDate);
+    }
+
+    public void add(Map<String, CodeDelta> codeDeltas, AuthorId authorId) {
+        Author author = authorRepository.findBy(authorId);
+        ChangeDate changeDate = new ChangeDate(clock.nowDate());
+
+        history.store(codeDeltas, author, changeDate);
     }
 }
